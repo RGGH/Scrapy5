@@ -6,7 +6,8 @@
 import scrapy
 
 class YelpItem(scrapy.Item):
-
+    co_website = scrapy.Field()
+    co_tel = scrapy.Field()
     link = scrapy.Field()
     logo_url = scrapy.Field()
     lcompanyname = scrapy.Field()
