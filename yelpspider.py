@@ -18,7 +18,7 @@ from scrapy.crawler import CrawlerProcess
 class YelpSpider(scrapy.Spider):
 
     name = 'yelp-spider'
-    custom_settings = {'FEED_FORMAT':'csv','FEED_URI':'YELP.csv'}
+    custom_settings = {"FEEDS": {"results.csv": {"format": "csv"}}}}
     start_urls = ['https://www.yelp.com/search?find_desc=Plumbers&find_loc=London&ns=1']
     headers = {
         'user-agent' :
