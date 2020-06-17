@@ -68,16 +68,12 @@ class YelpSpider(scrapy.Spider):
         # loader.add_value("co_tel",co_tel)
         # yield l.load_item()
 
-
     # uncomment below right at end!!! ____________________________________________________________________________________________________
 
     # # Get the next 20 listings from 'next page' - persist until no more #
     #     next_page = response.xpath("/.//a[@class='lemon--a__373c0__IEZFH link__373c0__1G70M link-color--inherit__373c0__3dzpk link-size--inherit__373c0__1VFlE']/@href").get()
     #     if next_page:
     #         yield response.follow(url=next_page, callback=self.parse)
-
-
-
 
 # main driver
 if __name__ == "__main__":
