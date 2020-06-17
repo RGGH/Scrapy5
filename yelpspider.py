@@ -1,8 +1,8 @@
-#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-#   |r|e|d|a|n|d|g|r|e|e|n|.|c|o|.|u|k|
-#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-         ''' Spider for Yelp '''
-# 'meta' passes variables between functions #
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-#
+#   |r|e|d|a|n|d|g|r|e|e|n|.|c|o|.|u|k|    #
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-#
+'''          Spider for Yelp             '''
+# 'meta' passes variables between methods  #
 
 import os
 import scrapy
@@ -12,6 +12,7 @@ from scrapy.crawler import CrawlerProcess
 from scrapy import Request
 
 class YelpSpider(scrapy.Spider):
+
     name = 'yelp-spider'
     custom_settings = {"FEEDS": {"results.csv": {"format": "csv"}},'CONCURRENT_REQUESTS': 1}
     start_urls = ['https://www.yelp.com/search?find_desc=Plumbers&find_loc=London&ns=1']
@@ -57,7 +58,7 @@ class YelpSpider(scrapy.Spider):
         co_website = response.xpath('//a[@class="lemon--a__373c0__IEZFH link__373c0__1G70M link-color--blue-dark__373c0__85-Nu link-size--inherit__373c0__1VFlE"]//text()').get() # website //text()').get()
         co_tel = response.xpath('//p[@class="lemon--p__373c0__3Qnnj text__373c0__2Kxyz text-color--normal__373c0__3xep9 text-align--left__373c0__2XGa-"]/text()').getall()[1] # TEL No.
 
-        yield{'co_website':co_website, 'logo_url' : logo_url, 'lcompany_name' : lcompanyname}
+        yield{'lcompany_name' : lcompanyname, 'co_website':co_website, 'co_tel': co_tel, 'logo_url' : logo_url}
 
 
         # l = ItemLoader(item=YelpItem(), response=response)
