@@ -60,7 +60,6 @@ class YelpSpider(scrapy.Spider):
 
         yield{'lcompany_name' : lcompanyname, 'co_website':co_website, 'co_tel': co_tel, 'logo_url' : logo_url}
 
-
         # l = ItemLoader(item=YelpItem(), response=response)
         # loader.add_value("link",link)
         # loader.add_value("logo_url",logo_url)
