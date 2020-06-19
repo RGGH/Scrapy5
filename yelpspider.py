@@ -84,4 +84,3 @@ if __name__ == "__main__":
     process = CrawlerProcess()
     process.crawl(YelpSpider)
     process.start()
-
