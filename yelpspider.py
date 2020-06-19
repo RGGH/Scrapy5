@@ -6,7 +6,7 @@
 
 import os
 import scrapy
-import my_classnames # pyts classnames into short variables
+import my_classnames # puts classnames into short variables
 from scrapy.loader import ItemLoader
 from items import YelpItem
 from scrapy.crawler import CrawlerProcess
