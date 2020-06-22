@@ -2,7 +2,7 @@
 #   |r|e|d|a|n|d|g|r|e|e|n|.|c|o|.|u|k|    #
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-#
 '''          Spider for Yelp             '''
-# 'meta' passes variables between methods  #
+# 'cb_kwargs' passes variables between methods  #
 
 import os
 import scrapy
